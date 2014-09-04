@@ -8,10 +8,13 @@ bin/
 /project/project
 /project/target
 /target
+/precompiled
 tmp/
 test-result
 server.pid
 *.iml
+*.ipr
+*.iws
 *.eml
 /dist/
 .cache
