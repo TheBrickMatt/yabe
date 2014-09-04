@@ -1,11 +1,18 @@
 package models;
 
+import org.junit.Before;
 import org.junit.Test;
+import play.test.Fixtures;
 import play.test.UnitTest;
 
 import static org.hamcrest.CoreMatchers.*;
 
 public class UserTest extends UnitTest {
+
+    @Before
+    public void setUp() throws Exception {
+        Fixtures.deleteDatabase();
+    }
 
     @Test
     public void createAndRetrieveUser() {
