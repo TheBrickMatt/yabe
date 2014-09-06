@@ -13,7 +13,6 @@ public class User extends Model {
 
     public String email;
     public String password;
-    @Required
     public String fullName;
     public boolean isAdmin;
 

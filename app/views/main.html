@@ -3,10 +3,28 @@
 <head>
     <title>#{get 'title' /}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"></script>
+    <script src="@{'/public/javascripts/jquery.expose.js'}"></script>
+
     <link rel="stylesheet" type="text/css" media="screen"
           href="@{'/public/stylesheets/main.css'}" />
     <link rel="shortcut icon" type="image/png"
           href="@{'/public/images/favicon.png'}" />
+
+    <script type="text/javascript" charset="utf-8">
+    $(function() {
+        // Expose the form
+        $('form').click(function() {
+            $('form').expose({api: true}).load();
+        });
+
+        // If there is an error, focus to form
+        if($('form .error').size()) {
+            $('form').expose({api: true, loadSpeed: 0}).load();
+            $('form input[type=text]').get(0).focus();
+        }
+    });
+</script>
 </head>
 <body>
 
@@ -21,7 +39,7 @@
     </ul>
     <div id="title">
         <span class="about">About this blog</span>
-        <h1><a href="#">${blogTitle}</a></h1>
+        <h1><a href="@{Application.index()}">${blogTitle}</a></h1>
         <h2>${blogBaseline}</h2>
     </div>
 </div>

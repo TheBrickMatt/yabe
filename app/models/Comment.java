@@ -13,15 +13,15 @@ public class Comment extends Model {
     public String author;
     public Date postedAt;
     @Lob
-    public String comment;
+    public String content;
 
     @ManyToOne
     public Post post;
 
-    public Comment(Post post, String author, String comment) {
+    public Comment(Post post, String author, String content) {
         this.author = author;
         this.post = post;
-        this.comment = comment;
+        this.content = content;
         this.postedAt = new Date();
     }
 
