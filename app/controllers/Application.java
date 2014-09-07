@@ -39,4 +39,9 @@ public class Application extends Controller {
         show(postId);
     }
 
+    public static void taggedPosts(String tag) {
+        List<Post> posts = Post.findTaggedPosts(tag);
+        render(tag, posts);
+    }
+
 }

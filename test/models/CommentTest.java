@@ -40,10 +40,10 @@ public class CommentTest extends UnitTest {
         Comment c1 = comments.get(0);
         Comment c2 = comments.get(1);
         assertThat(c1.author, is("user 1"));
-        assertThat(c1.comment, is("liked"));
+        assertThat(c1.content, is("liked"));
         assertThat(c1.postedAt, not(nullValue()));
         assertThat(c2.author, is("user 2"));
-        assertThat(c2.comment, is("hated"));
+        assertThat(c2.content, is("hated"));
         assertThat(c2.postedAt, not(nullValue()));
         // and the comment matches the comment
         // and the posted date is not null
